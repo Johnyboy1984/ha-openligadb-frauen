@@ -6,7 +6,7 @@
 
 Dieses öffentliche Repository enthält die erste Testversion. Die Installation erfolgt zunächst über HACS als benutzerdefiniertes Repository oder manuell. Die automatischen Prüfungen findest du unter **Actions**; es gibt noch keine Aufnahme in den allgemeinen HACS-Katalog.
 
-Die portable Testsuite prüft die Auswahlregeln, Ergebnisse, lokale Datenkorrekturen, Zeitzonen und API-Fehler. Ein zusätzlicher GitHub-Actions-Workflow testet Einrichtung, Sensoren und Entladen mit einer echten Home-Assistant-Testumgebung unter Linux; **dieser Workflow wurde hier noch nicht ausgeführt**. Die Version wurde noch nicht in einer laufenden Home-Assistant-Instanz installiert. Bitte zuerst parallel zu vorhandenen Sensoren testen.
+Die portable Testsuite prüft die Auswahlregeln, Ergebnisse, lokale Datenkorrekturen, Zeitzonen und API-Fehler. Ein zusätzlicher GitHub-Actions-Workflow testet Einrichtung, Sensoren und Entladen mit einer echten Home-Assistant-Testumgebung unter Linux. Den jeweiligen Prüfstatus zeigt [GitHub Actions](https://github.com/Johnyboy1984/ha-openligadb-frauen/actions). Die Version wurde noch nicht in einer laufenden Home-Assistant-Instanz installiert. Bitte zuerst parallel zu vorhandenen Sensoren testen.
 
 ## Funktionen
 
@@ -31,16 +31,14 @@ Die portable Testsuite prüft die Auswahlregeln, Ergebnisse, lokale Datenkorrekt
 
 Mindestversion: Home Assistant **2026.10.0**. Die erste Version ist auf die derzeitige Bundesliga mit 14 Teams und sieben Spielen pro Spieltag sowie Pokalrunden mit höchstens 16 Begegnungen zugeschnitten. Der Rundensensor enthält auch bei mehr Begegnungen die gesamte Liste; einzelne Pokalsensoren gibt es für die ersten 16 Plätze.
 
-## Später über HACS installieren
-
-Nach der Veröffentlichung des vollständigen Repository-Inhalts auf einem **öffentlichen** GitHub-Repository:
+## Über HACS installieren
 
 1. HACS öffnen → Menü → **Benutzerdefinierte Repositories**.
-2. Die tatsächliche Repository-URL eintragen, Kategorie **Integration** wählen.
-3. **OpenLigaDB Frauen** herunterladen und Home Assistant neu starten.
+2. `https://github.com/Johnyboy1984/ha-openligadb-frauen` eintragen, Kategorie **Integration** wählen.
+3. **OpenLigaDB Frauen** herunterladen; für die erste Beta gegebenenfalls **Vorabversionen anzeigen** aktivieren. Anschließend Home Assistant neu starten.
 4. Die Einträge wie oben über Geräte & Dienste einrichten.
 
-`hacs.json`, die erforderliche Verzeichnisstruktur und lokale Brand-Icons sind enthalten. Ein eigenes Repository in HACS hinzuzufügen ist unabhängig von einer späteren Aufnahme in den allgemeinen Katalog. Vor einer Veröffentlichung sollten die GitHub-Workflows erfolgreich laufen; HACS-/hassfest-Validierungen sind zusätzliche Prüfungen vor dem Release.
+`hacs.json`, die erforderliche Verzeichnisstruktur und lokale Brand-Icons sind enthalten. Ein eigenes Repository in HACS hinzuzufügen ist unabhängig von einer späteren Aufnahme in den allgemeinen Katalog.
 
 ## Sensoren
 
@@ -107,4 +105,3 @@ python -m pytest ha_tests -v
 ```
 
 Referenzen: [OpenLigaDB](https://www.openligadb.de/), [API-Beispiele](https://github.com/OpenLigaDB/OpenLigaDB-Samples), [HA Config Flow](https://developers.home-assistant.io/docs/config_entries_config_flow_handler/), [DataUpdateCoordinator](https://developers.home-assistant.io/docs/integration_fetching_data/), [HACS-Anforderungen](https://www.hacs.xyz/docs/publish/integration/).
-
