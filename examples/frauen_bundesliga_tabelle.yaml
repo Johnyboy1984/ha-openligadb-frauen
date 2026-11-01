@@ -1,0 +1,32 @@
+type: custom:flex-table-card
+title: Frauen-Bundesliga – Tabelle
+entities:
+  include: sensor.openligadb_frauen_bundesliga_tabelle
+columns:
+- name: Platz
+  data: table
+  modify: x.rank
+- name: Mannschaft
+  data: table
+  modify: String(x.teamName).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))
+- name: Spiele
+  data: table
+  modify: x.matches
+- name: S
+  data: table
+  modify: x.won
+- name: U
+  data: table
+  modify: x.draw
+- name: N
+  data: table
+  modify: x.lost
+- name: Tore
+  data: table
+  modify: x.goals + ':' + x.opponentGoals
+- name: D
+  data: table
+  modify: x.goalDiff
+- name: Punkte
+  data: table
+  modify: x.points

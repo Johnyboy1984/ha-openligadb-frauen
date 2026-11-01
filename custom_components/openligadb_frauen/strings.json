@@ -1,0 +1,39 @@
+{
+  "title": "OpenLigaDB Frauen",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up OpenLigaDB Frauen",
+        "description": "Choose a competition and the season start year (2026 means 2026/27). Existing YAML entities are left untouched.",
+        "data": {
+          "competition": "Competition",
+          "season": "Season start year"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to OpenLigaDB. Try again later.",
+      "no_matches": "No usable matches were found for this competition and season."
+    },
+    "abort": {
+      "already_configured": "This competition is already configured. Change the season through its options."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "OpenLigaDB Frauen options",
+        "description": "Saving reloads the sensors. The known score correction only applies to Bayern–Leverkusen on November 1, 2026.",
+        "data": {
+          "season": "Season start year",
+          "scan_interval": "Polling interval in seconds (60–3600)",
+          "known_corrections": "Apply known score correction"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to OpenLigaDB. Previous settings are unchanged.",
+      "no_matches": "No usable matches were found for this season."
+    }
+  }
+}

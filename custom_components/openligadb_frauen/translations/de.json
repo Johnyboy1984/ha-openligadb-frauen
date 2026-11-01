@@ -1,0 +1,39 @@
+{
+  "title": "OpenLigaDB Frauen",
+  "config": {
+    "step": {
+      "user": {
+        "title": "OpenLigaDB Frauen einrichten",
+        "description": "Wähle Wettbewerb und Saisonstartjahr (2026 = Saison 2026/27). Bestehende YAML-Sensoren bleiben unverändert.",
+        "data": {
+          "competition": "Wettbewerb",
+          "season": "Saisonstartjahr"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "OpenLigaDB ist nicht erreichbar. Bitte später erneut versuchen.",
+      "no_matches": "Für diesen Wettbewerb und diese Saison wurden keine verwendbaren Spiele gefunden."
+    },
+    "abort": {
+      "already_configured": "Dieser Wettbewerb ist bereits eingerichtet. Die Saison lässt sich über die Optionen ändern."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "OpenLigaDB Frauen – Optionen",
+        "description": "Nach dem Speichern werden die Sensoren neu geladen. Die bekannte Ergebniskorrektur betrifft ausschließlich Bayern–Leverkusen vom 01.11.2026.",
+        "data": {
+          "season": "Saisonstartjahr",
+          "scan_interval": "Abrufintervall in Sekunden (60–3600)",
+          "known_corrections": "Bekannte Ergebniskorrektur anwenden"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "OpenLigaDB ist nicht erreichbar. Die bisherigen Einstellungen bleiben bestehen.",
+      "no_matches": "Für diese Saison wurden keine verwendbaren Spiele gefunden."
+    }
+  }
+}

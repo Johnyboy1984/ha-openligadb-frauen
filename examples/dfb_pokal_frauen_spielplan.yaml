@@ -1,0 +1,27 @@
+type: custom:flex-table-card
+title: DFB-Pokal Frauen – aktuelle Runde
+entities:
+  include: sensor.openligadb_dfb_pokal_frauen_aktuelle_runde
+columns:
+- name: Runde
+  data: spiele
+  modify: x.runde
+- name: Anstoß
+  data: spiele
+  modify: 'new Date(x.anstoss).toLocaleString(''de-DE'', {timeZone: ''Europe/Berlin'', day:''2-digit'', month:''2-digit'',
+    year:''numeric'', hour:''2-digit'', minute:''2-digit''})'
+- name: Heim
+  data: spiele
+  modify: '(() => { const esc = v => String(v ?? '''').replace(/[&<>"'']/g, c => ({''&'':''&amp;'',''<'':''&lt;'',''>'':''&gt;'',''"'':''&quot;'',"''":''&#39;''}[c]));
+    const name = x.heim || ''''; const logo = x.heim_logo || ''''; return ''<span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap">''
+    + (/^https:\/\//.test(logo) ? ''<img src="'' + esc(logo) + ''" alt="" referrerpolicy="no-referrer" style="width:24px;height:24px;object-fit:contain">''
+    : '''') + ''<span>'' + esc(name) + ''</span></span>''; })()'
+- name: Gast
+  data: spiele
+  modify: '(() => { const esc = v => String(v ?? '''').replace(/[&<>"'']/g, c => ({''&'':''&amp;'',''<'':''&lt;'',''>'':''&gt;'',''"'':''&quot;'',"''":''&#39;''}[c]));
+    const name = x.gast || ''''; const logo = x.gast_logo || ''''; return ''<span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap">''
+    + (/^https:\/\//.test(logo) ? ''<img src="'' + esc(logo) + ''" alt="" referrerpolicy="no-referrer" style="width:24px;height:24px;object-fit:contain">''
+    : '''') + ''<span>'' + esc(name) + ''</span></span>''; })()'
+- name: Ergebnis
+  data: spiele
+  modify: x.ergebnis

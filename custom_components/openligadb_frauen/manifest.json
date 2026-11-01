@@ -1,0 +1,13 @@
+{
+  "domain": "openligadb_frauen",
+  "name": "OpenLigaDB Frauen",
+  "codeowners": ["@Johnyboy1984"],
+  "config_flow": true,
+  "documentation": "https://github.com/Johnyboy1984/ha-openligadb-frauen",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Johnyboy1984/ha-openligadb-frauen/issues",
+  "requirements": [],
+  "version": "0.1.0b1"
+}
+
